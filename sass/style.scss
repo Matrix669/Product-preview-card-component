@@ -1,0 +1,185 @@
+// ### Primary
+
+// - Dark cyan: hsl(158, 36%, 37%)
+// - Cream: hsl(30, 38%, 92%)
+
+// ### Neutral
+
+// - Very dark blue: hsl(212, 21%, 14%)
+// - Dark grayish blue: hsl(228, 12%, 48%)
+// - White: hsl(0, 0%, 100%)
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: rgb(242, 235, 227);
+	font-family: 'Montserrat', sans-serif;
+	// font-family: 'Fraunces', sans-serif;
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    height: 550px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 14px;
+	overflow: hidden;
+
+	&__img {
+        height: 100%;
+		width: 300px;
+        object-fit: cover;
+	}
+    &__img-desktop {
+        display: none;
+    }
+
+	&__bottom {
+		&-text {
+			width: 300px;
+			padding: 20px;
+
+			&--product {
+				color: rgb(108, 114, 137);
+				text-transform: uppercase;
+				font-size: 14px;
+				letter-spacing: 3px;
+				padding-bottom: 10px;
+				font-weight: bold;
+			}
+
+			&--brand {
+				font-family: 'Fraunces', sans-serif;
+				font-weight: bold;
+				font-size: 30px;
+				padding-bottom: 14px;
+			}
+
+			&--description {
+				color: rgb(108, 114, 137);
+			}
+		}
+
+		&-price {
+			width: 250px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding-bottom: 15px;
+
+			&--discount {
+				font-family: 'Fraunces', sans-serif;
+				color: rgb(60, 128, 103);
+				font-size: 30px;
+			}
+
+			&--fprice {
+				color: rgb(108, 114, 137);
+				font-size: 14px;
+			}
+		}
+
+		&-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			&--add {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: rgb(60, 128, 103);
+				color: white;
+				border: none;
+				border-radius: 10px;
+				text-align: center;
+				margin-bottom: 15px;
+				padding: 15px 80px;
+				font-weight: bold;
+				cursor: pointer;
+
+				&-icon {
+					padding-right: 10px;
+					width: 30px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.card {
+		height: 650px;
+		&__img {
+			width: 350px;
+		}
+
+		&__bottom {
+			&-text {
+				width: 350px;
+
+				&--product {
+					font-size: 16px;
+				}
+				&--brand {
+					font-size: 36px;
+				}
+			}
+
+			&-btn {
+				&--add {
+					padding: 15px 100px;
+				}
+			}
+		}
+
+		&-price {
+			width: 350px;
+		}
+
+		
+	}
+}
+@media (min-width: 768px) {
+	.card {
+		flex-direction: row;
+        height: 450px;
+        width: 600px;
+        &__img-desktop{
+           display: block;
+           width: 300px;
+        }
+        &__img {
+            display: none;
+        }
+
+        &__bottom {
+			&-text {
+				width: 300px;
+			}
+            &-price {
+				padding-bottom: 35px;
+			}
+            &-btn {
+                display: flex;
+                
+                &--add {
+                    transition: background-color .3s;
+					padding: 15px 80px;
+                    &:hover {
+                        background-color: rgb(26, 56, 45);
+                    }
+                }
+            }
+        }
+	}
+}
